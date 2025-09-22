@@ -1,0 +1,39 @@
+.header-top {
+  background-color: var(--dark-bg);
+}
+
+.header-top-content {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 8px 0;
+}
+
+.header-top-content-login {
+  display: flex;
+  margin-right: 24px;
+  text-decoration: none;
+  gap: 8px;
+  --p-button-text-secondary-color: white !important;
+  --p-button-text-secondary-hover-background: none;
+  --p-button-text-secondary-active-background: none;
+  --p-button-padding-y: 8px;
+  --p-button-padding-x: 0;
+}
+
+.header-top-content-login:hover {
+  --p-button-text-secondary-color: var(--blue) !important;
+}
+
+.header-top-content-new {
+  display: flex;
+  align-items: center;
+  background-color: var(--blue);
+  border: none;
+  border-radius: 3px;
+}
+
+.header-top-content-new:hover {
+  background-color: var(--dark-blue);
+  cursor: pointer;
+}

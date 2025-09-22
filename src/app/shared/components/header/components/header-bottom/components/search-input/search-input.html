@@ -1,0 +1,14 @@
+<input
+  type="text"
+  [(ngModel)]="searchTerm"
+  [placeholder]="placeholder()"
+  (input)="searchChange.emit(searchTerm)"
+  class="header-bottom-content-search-input"
+/>
+<p-button
+  icon="pi pi-search"
+  iconPos="right"
+  severity="info"
+  label="Найти"
+  class="header-bottom-content-search-btn"
+/>

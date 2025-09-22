@@ -1,0 +1,13 @@
+<a [routerLink]="['/advert', ad().id]" class="listing-link">
+  <div class="listing-link-image">
+    <app-ad-image [imageId]="ad().imagesIds![0]"></app-ad-image>
+  </div>
+  <div class="listing-link-info">
+    <h3 class="listing-link-info-title">{{ ad().name }}</h3>
+    <div class="listing-link-info-price">{{ ad().cost | pricepipe }} ₽</div>
+    <div class="listing-link-info-text">
+      {{ ad().location }}<br />
+      {{ ad().createdAt }}
+    </div>
+  </div>
+</a>

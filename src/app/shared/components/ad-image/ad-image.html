@@ -1,0 +1,24 @@
+<div class="ad-image">
+  @switch (imageStatus()) {
+    @case ("success") {
+      @if (imageId()) {
+        <img
+          [src]="'http://dzitskiy.ru:5000/Images/' + imageId()"
+          alt="Ad image"
+          class="ad-image-img"
+          loading="lazy"
+          (error)="onImageError()"
+        />
+      } @else {
+        <img
+          src="/assets/images/no-image.jpg"
+          alt="No image available"
+          class="ad-image-img"
+        />
+      }
+    }
+    @case ("error") {
+      <div class="ad-image-error">{{ errorMessage() }}</div>
+    }
+  }
+</div>

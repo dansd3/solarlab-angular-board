@@ -1,0 +1,23 @@
+.header-bottom-content-search-input {
+  display: flex;
+  flex: 1;
+  padding: 8px 12px;
+  font-size: 14px;
+  font-weight: 400;
+  border: 1px solid var(--border-color);
+  border-radius: 3px 0 0 3px;
+  outline: none;
+}
+
+.header-bottom-content-search-btn {
+  display: flex;
+  font-size: 10px !important;
+  background-color: var(--blue);
+  border: none;
+  border-radius: 0 3px 3px 0;
+}
+
+.header-bottom-content-search-btn:hover {
+  background-color: var(--dark-blue);
+  cursor: pointer;
+}
