@@ -1,14 +1,9 @@
 <div class="header-bottom">
   <div class="container">
     <div class="header-bottom-content">
-      <h1 class="header-bottom-content-title">Доска объявлений</h1>
-      <p-button
-        icon="pi pi-bars"
-        severity="info"
-        variant="outlined"
-        label="Все категории"
-        class="header-bottom-content-categories"
-      ></p-button>
+      <a [routerLink]="['/']" class="header-bottom-content-title"
+        >Доска объявлений</a
+      >
 
       <app-search-input
         (searchChange)="onSearch($event)"

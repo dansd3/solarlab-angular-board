@@ -1,0 +1,58 @@
+<form [formGroup]="registerForm" (ngSubmit)="onSubmit()" class="form">
+  <div class="form-field">
+    <input pInputText formControlName="name" placeholder="Имя" />
+    @if (
+      registerForm.get("name")?.invalid && registerForm.get("name")?.touched
+    ) {
+      <div class="form-error-message">Имя должно быть от 4 до 64 символов</div>
+    }
+  </div>
+
+  <div class="form-field">
+    <input pInputText formControlName="login" placeholder="Логин" />
+    @if (
+      registerForm.get("login")?.invalid && registerForm.get("login")?.touched
+    ) {
+      <div class="form-error-message">
+        Логин должен быть от 4 до 64 символов
+      </div>
+    }
+  </div>
+
+  <div class="form-field">
+    <p-password
+      formControlName="password"
+      [feedback]="false"
+      placeholder="Пароль"
+    ></p-password>
+    @if (
+      registerForm.get("password")?.invalid &&
+      registerForm.get("password")?.touched
+    ) {
+      <div class="form-error-message">Пароль должен быть больше 8 символов</div>
+    }
+  </div>
+
+  @switch (serverError) {
+    @case (null) {}
+    @case ("Invalid login or password") {
+      <div class="form-error-message form-error-message-server">
+        Неправильный логин или пароль
+      </div>
+    }
+    @default {
+      <div class="form-error-message form-error-message-server">
+        Ошибка сервера
+      </div>
+    }
+  }
+  <div class="form-submit-wrapper">
+    <p-button
+      type="submit"
+      label="Зарегистрироваться"
+      severity="info"
+      [disabled]="registerForm.invalid"
+      class="form-submit-button"
+    />
+  </div>
+</form>

@@ -1,23 +1,7 @@
 <div class="header-top">
   <div class="container">
     <div class="header-top-content">
-      @if (!isLoggedIn()) {
-        <p-button
-          icon="pi pi-user"
-          variant="text"
-          severity="secondary"
-          label="Войти"
-          class="header-top-content-login"
-        />
-      } @else {
-        <p-button
-          icon="pi pi-user"
-          variant="text"
-          severity="secondary"
-          label="Выйти"
-          class="header-top-content-login"
-        />
-      }
+      <app-user-menu />
       <p-button
         icon="pi pi-plus"
         iconPos="right"

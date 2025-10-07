@@ -4,6 +4,6 @@ import { Component } from '@angular/core';
   selector: 'app-personal-account',
   standalone: true,
   templateUrl: './personal-account.html',
-  styleUrls: ['./personal-account.scss']
+  styleUrls: ['./personal-account.scss'],
 })
 export class PersonalAccount {}

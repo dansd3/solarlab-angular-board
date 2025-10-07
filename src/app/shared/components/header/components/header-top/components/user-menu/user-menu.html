@@ -1,0 +1,45 @@
+@if (!isLoggedIn()) {
+  <p-button
+    icon="pi pi-user"
+    variant="text"
+    severity="secondary"
+    label="Войти"
+    class="header-top-content-login"
+    (click)="showLoginDialog()"
+  />
+} @else {
+  <button
+    class="p-button p-button-text p-button-secondary header-top-content-login"
+    (click)="menu.toggle($event)"
+  >
+    <i class="pi pi-user"></i>
+    {{ userName }}
+    <i class="pi pi-sort-down-fill"></i>
+  </button>
+  <p-menu #menu [model]="menuItems" [popup]="true" />
+}
+
+<p-dialog
+  header="Авторизация"
+  [(visible)]="displayLogin"
+  [modal]="true"
+  styleClass="modal-form"
+  [closable]="true"
+>
+  <app-login-modal
+    (registerClick)="showRegisterDialog(); displayLogin = false"
+    (loginSuccess)="displayLogin = false"
+  ></app-login-modal>
+</p-dialog>
+
+<p-dialog
+  header="Регистрация"
+  [(visible)]="displayRegister"
+  [modal]="true"
+  styleClass="modal-form"
+  [closable]="true"
+>
+  <app-register-modal
+    (registerSuccess)="displayRegister = false"
+  ></app-register-modal>
+</p-dialog>

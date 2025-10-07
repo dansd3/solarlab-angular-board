@@ -1,11 +1,33 @@
 import { Routes } from '@angular/router';
-import { AdvertList } from './features/advert-list/advert-list';
-import { AdvertDetail } from './features/advert-detail/advert-detail';
-import { PersonalAccount } from './features/personal-account/personal-account';
 import { authGuard } from './infrastructure/guards/auth/auth-guard';
 
 export const routes: Routes = [
-  { path: '', component: AdvertList },
-  { path: 'advert/:id', component: AdvertDetail },
-  { path: 'account', component: PersonalAccount, canActivate: [authGuard] }
+  {
+    path: '',
+    loadComponent: () =>
+      import('@/features/advert-list/advert-list').then((m) => m.AdvertList),
+  },
+  {
+    path: 'advert/:id',
+    loadComponent: () =>
+      import('@/features/advert-detail/advert-detail').then(
+        (m) => m.AdvertDetail,
+      ),
+  },
+  {
+    path: 'settings',
+    loadComponent: () =>
+      import('@/features/personal-account/personal-account').then(
+        (m) => m.PersonalAccount,
+      ),
+    canActivate: [authGuard],
+  },
+  {
+    path: 'my-adverts',
+    loadComponent: () =>
+      import('@/features/personal-account/personal-account').then(
+        (m) => m.PersonalAccount,
+      ),
+    canActivate: [authGuard],
+  },
 ];

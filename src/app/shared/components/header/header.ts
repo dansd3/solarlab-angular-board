@@ -1,8 +1,9 @@
-import { Component, signal } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { HeaderTopComponent } from './components/header-top/header-top';
 import { HeaderBottomComponent } from './components/header-bottom/header-bottom';
+import { AuthStore } from '@/infrastructure/stores/auth/auth-store';
 
 @Component({
   selector: 'app-header',
@@ -17,5 +18,6 @@ import { HeaderBottomComponent } from './components/header-bottom/header-bottom'
   styleUrls: ['./header.scss'],
 })
 export class HeaderComponent {
-  isLoggedIn = signal(false);
+  authStore = inject(AuthStore);
+  isLoggedIn = this.authStore.isLoggedIn;
 }
