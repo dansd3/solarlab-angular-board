@@ -1,0 +1,64 @@
+<div class="container">
+  <div class="search-list">
+    <app-search-header [query]="query()" [categoryId]="categoryId()" />
+
+    <div class="search-list-content">
+      <div class="search-list-left">
+        <app-categories-list />
+        <div class="search-list-left-price">
+          <h3 class="search-list-left-price-header">Цена</h3>
+          <div class="search-list-left-price-input">
+            <p-inputNumber
+              class="search-list-left-price-input-field"
+              [(ngModel)]="minPrice"
+              placeholder="Цена от"
+              mode="currency"
+              currency="RUB"
+            />
+            <p-inputNumber
+              class="search-list-left-price-input-field"
+              [(ngModel)]="maxPrice"
+              placeholder="до, руб."
+              mode="currency"
+              currency="RUB"
+            />
+          </div>
+          <div class="search-list-left-price-button">
+            <p-button
+              label="Показать обьявления"
+              severity="info"
+              (click)="applyPriceFilter()"
+            />
+          </div>
+        </div>
+      </div>
+
+      <div class="search-list-right">
+        <div class="search-list-right-top">
+          <p class="search-list-right-top-results">
+            Всего найдено {{ filteredAndSortedAds().length }} обьявлений
+          </p>
+          <div class="search-list-right-top-sort">
+            <h4 class="search-list-right-top-sort-label">Сортировка по</h4>
+            <p-select
+              [options]="sortOptions"
+              [ngModel]="selectedSort()"
+              (ngModelChange)="selectedSort.set($event)"
+              placeholder="Выберите"
+              optionLabel="label"
+              optionValue="value"
+            />
+          </div>
+        </div>
+
+        <div class="search-list-right-ad">
+          <div class="search-list-right-ad-posts">
+            @for (ad of filteredAndSortedAds(); track ad.id) {
+              <app-ad-card [ad]="ad"></app-ad-card>
+            }
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

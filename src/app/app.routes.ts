@@ -30,4 +30,9 @@ export const routes: Routes = [
       ),
     canActivate: [authGuard],
   },
+  {
+    path: 'search',
+    loadComponent: () =>
+      import('@/features/search-list/search-list').then((m) => m.SearchList),
+  },
 ];

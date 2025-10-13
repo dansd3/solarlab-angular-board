@@ -1,0 +1,91 @@
+.search-list {
+  display: flex;
+  flex-direction: column;
+
+  &-content {
+    display: flex;
+    gap: 24px;
+  }
+
+  &-left {
+    width: 250px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    &-price {
+      display: flex;
+      flex-direction: column;
+
+      &-header {
+        font-size: 16px;
+        font-weight: 600;
+        color: var(--heading-color);
+        margin-bottom: 8px;
+      }
+
+      &-input {
+        display: flex;
+        margin-bottom: 24px;
+        gap: 8px;
+        &-field {
+          width: 50%;
+        }
+      }
+
+      &-button {
+        display: flex;
+        justify-content: center;
+        --p-button-padding-x: 54px;
+        --p-button-padding-y: 12px;
+      }
+    }
+  }
+
+  &-right {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    &-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      &-results {
+        font-weight: 400;
+        font-size: 16px;
+        color: var(--small-text-color);
+      }
+
+      &-sort {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        --p-select-placeholder-color: var(--heading-color);
+        --p-select-dropdown-color: var(--heading-color);
+        --p-select-focus-border-color: var(--dark-bg);
+
+        &-label {
+          font-weight: 400;
+          font-size: 16px;
+          color: var(--heading-color);
+        }
+      }
+    }
+
+    &-ad {
+      &-posts {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 1rem;
+      }
+    }
+  }
+}
+
+::ng-deep .p-inputnumber-input {
+  width: 100px;
+  padding: 8px 12px !important;
+}
