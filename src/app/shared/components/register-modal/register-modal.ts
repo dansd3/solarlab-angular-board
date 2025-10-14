@@ -59,19 +59,29 @@ export class RegisterModal {
     });
   }
 
+  get nameControl() {
+    return this.registerForm.get('name');
+  }
+
+  get loginControl() {
+    return this.registerForm.get('login');
+  }
+
+  get passwordControl() {
+    return this.registerForm.get('password');
+  }
+
   onSubmit() {
-    if (this.registerForm.invalid) return;
-
-    const { name, login, password } = this.registerForm.value;
-
-    this.registerService.register(name, login, password).subscribe({
-      next: () => {
-        this.serverError = null;
-        this.registerSuccess.emit();
-      },
-      error: (err) => {
-        this.serverError = err.error?.login?.[0] || 'Ошибка регистрации';
-      },
-    });
+    if (this.registerForm.valid) {
+      this.serverError = null;
+      this.registerService.register(this.registerForm.value).subscribe({
+        next: () => {
+          this.registerSuccess.emit();
+        },
+        error: (err) => {
+          this.serverError = err.message;
+        },
+      });
+    }
   }
 }
