@@ -7,6 +7,7 @@
   aspect-ratio: 1.5;
   display: block;
   transition: transform 0.3s ease;
+  object-fit: cover;
 }
 
 .ad-image-img:hover {

@@ -20,7 +20,7 @@ import { MessageService } from 'primeng/api';
 import { CreateAdvertBusiness } from './services/create-advert-service';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { Router } from '@angular/router';
-import { ObjectUrlPipe } from '../../infrastructure/pipes/urlPipe';
+import { ObjectUrlPipe } from '../../shared/pipes/urlPipe';
 @Component({
   selector: 'app-create-advert',
   standalone: true,

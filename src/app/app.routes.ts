@@ -25,8 +25,8 @@ export const routes: Routes = [
   {
     path: 'my-adverts',
     loadComponent: () =>
-      import('@/features/personal-account/personal-account').then(
-        (m) => m.PersonalAccount,
+      import('@/features/my-adverts/my-adverts').then(
+        (m) => m.MyAdverts,
       ),
     canActivate: [authGuard],
   },

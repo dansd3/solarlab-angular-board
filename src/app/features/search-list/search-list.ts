@@ -5,7 +5,7 @@ import { MenuModule } from 'primeng/menu';
 import { SelectModule } from 'primeng/select';
 import { InputNumberModule } from 'primeng/inputnumber';
 import { ButtonModule } from 'primeng/button';
-import { AdCard } from '../advert-list/components/ad-card/ad-card';
+import { AdCard } from '../../shared/components/ad-card/ad-card';
 import { SearchHeader } from './components/search-header/search-header';
 import { SearchListService } from './services/search-list-service';
 import { ActivatedRoute } from '@angular/router';
