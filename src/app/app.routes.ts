@@ -35,4 +35,10 @@ export const routes: Routes = [
     loadComponent: () =>
       import('@/features/search-list/search-list').then((m) => m.SearchList),
   },
+  {
+    path: 'new-advert',
+    loadComponent: () =>
+      import('@/features/new-advert/new-advert').then((m) => m.NewAdvert),
+    canActivate: [authGuard],
+  },
 ];

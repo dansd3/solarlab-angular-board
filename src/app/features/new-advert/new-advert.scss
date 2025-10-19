@@ -1,0 +1,136 @@
+.new-form {
+  display: flex;
+  flex-direction: column;
+  margin-top: 32px;
+  gap: 16px;
+
+  &-field {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  &-error {
+    color: #d32f2f;
+    font-size: 12px;
+  }
+
+  &-label {
+    font-size: 16px;
+    font-weight: 400;
+    color: var(--heading-color);
+
+    &-required {
+      color: red;
+    }
+  }
+
+  &-category {
+    --p-treeselect-padding-y: 12px;
+    --p-treeselect-padding-x: 12px;
+    color: var(--p-inputtext-color);
+    font-size: 16px;
+    --p-tree-node-selected-color: black;
+    --p-tree-node-focus-ring-color: black;
+    --p-tree-node-selected-background: gray;
+  }
+
+  &-name,
+  &-description {
+    color: var(--p-inputtext-color);
+    font-size: 16px;
+    font-family: inherit;
+
+    border-radius: var(--p-inputtext-border-radius);
+
+    & textarea {
+      padding: 12px;
+      border: 1px solid var(--p-inputtext-border-color);
+    }
+  }
+
+  &-location,
+  &-images {
+    --p-button-primary-background: #3b82f6 !important;
+    --p-button-primary-hover-background: #1a63d9 !important;
+    --p-button-primary-info-border-color: #3b82f6 !important;
+    --p-button-primary-info-color: #3b82f6 !important;
+  }
+
+  &-cost {
+  }
+
+  &-upload-toolbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &-drop-zone {
+    text-align: center;
+    padding: 2rem;
+    border: 2px dashed #ccc;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    cursor: pointer;
+  }
+
+  &-drop-icon {
+    font-size: 2rem;
+    color: #888;
+  }
+
+  &-drop-text {
+    font-size: 1rem;
+    color: #666;
+  }
+
+  &-file-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 1rem;
+    padding: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: #fff;
+  }
+
+  &-file-info {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  &-file-preview {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 4px;
+  }
+
+  &-file-details {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &-file-name {
+    font-weight: 500;
+  }
+
+  &-file-size {
+    font-size: 0.875rem;
+    color: #999;
+  }
+
+  &-submit {
+    margin-top: 8px;
+    --p-button-padding-y: 12px;
+    --p-button-padding-x: 12px;
+  }
+
+  &-terms {
+    font-weight: 400;
+    color: var(--small-text-color);
+  }
+}

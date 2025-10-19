@@ -2,13 +2,16 @@
   <div class="container">
     <div class="header-top-content">
       <app-user-menu />
-      <p-button
-        icon="pi pi-plus"
-        iconPos="right"
-        severity="info"
-        label="Новое объявление"
-        class="header-top-content-new"
-      />
+      @if (isLoggedIn()) {
+        <p-button
+          icon="pi pi-plus"
+          iconPos="right"
+          severity="info"
+          label="Новое объявление"
+          class="header-top-content-new"
+          [routerLink]="['/new-advert']"
+        />
+      }
     </div>
   </div>
 </div>

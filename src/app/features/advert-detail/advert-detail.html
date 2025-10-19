@@ -1,49 +1,73 @@
 <div class="container">
+  <div class="advert-detail-container">
+    <div class="advert-detail-left">
+      @if (ad().category) {
+        <app-breadcrumb [categoryId]="ad().category.id" />
+      }
 
-
-    <div class="advert-detail-container">
-        <div class="advert-detail-left">
-            @if (ad().category){
-            <app-breadcrumb [categoryId]="ad().category.id" />
-            }
-
-            <h1 class="advert-detail-left-header">{{ ad().name }}</h1>
-            <p-galleria class="advert-detail-left-gallery" [value]="images()" [numVisible]="5">
-                <ng-template #item let-item>
-                    <img [src]="item.itemImageSrc" style="width: 100%;" />
-                </ng-template>
-                <ng-template #thumbnail let-item>
-                    <img [src]="item.thumbnailImageSrc" style="width: 100%;" />
-                </ng-template>
-            </p-galleria>
-        </div>
-        <div class="advert-detail-right">
-            <h2 class="advert-detail-right-price">{{ ad().cost | number }} ₽</h2>
-            <p-button class="advert-detail-right-button" icon="pi pi-phone" iconPos="left"
-                label="Показать номер телефона" severity="info" (click)="showPhoneModal()" />
-            <div class="advert-detail-right-location">
-                <h4 class="advert-detail-right-location-header">Адрес</h4>
-                <p class="advert-detail-right-location-text">{{ ad().location }}</p>
-                <a class="advert-detail-right-location-link" [href]="mapLink()" target="_blank">Посмотреть на карте</a>
-            </div>
-
-            <div class="advert-detail-right-description">
-                <h4 class="advert-detail-right-description-header">Описание</h4>
-                <p class="advert-detail-right-description-text">{{ ad().description }}</p>
-            </div>
-
-        </div>
+      <h1 class="advert-detail-left-header">{{ ad().name }}</h1>
+      <p-galleria
+        class="advert-detail-left-gallery"
+        [value]="images()"
+        [numVisible]="5"
+      >
+        <ng-template #item let-item>
+          <img [src]="item.itemImageSrc" alt="image" style="width: 100%" />
+        </ng-template>
+        <ng-template #thumbnail let-item>
+          <img [src]="item.thumbnailImageSrc" alt="image" style="width: 100%" />
+        </ng-template>
+      </p-galleria>
     </div>
+    <div class="advert-detail-right">
+      <h2 class="advert-detail-right-price">{{ ad().cost | number }} ₽</h2>
+      <p-button
+        class="advert-detail-right-button"
+        icon="pi pi-phone"
+        iconPos="left"
+        label="Показать номер телефона"
+        severity="info"
+        (click)="showPhoneModal()"
+      />
+      <div class="advert-detail-right-location">
+        <h4 class="advert-detail-right-location-header">Адрес</h4>
+        <p class="advert-detail-right-location-text">{{ ad().location }}</p>
+        <a
+          class="advert-detail-right-location-link"
+          [href]="mapLink()"
+          target="_blank"
+          >Посмотреть на карте</a
+        >
+      </div>
+
+      <div class="advert-detail-right-description">
+        <h4 class="advert-detail-right-description-header">Описание</h4>
+        <p class="advert-detail-right-description-text">
+          {{ ad().description }}
+        </p>
+      </div>
+    </div>
+  </div>
 </div>
-@if (ad().user){
-<p-dialog header="{{ ad().user.name }}" [(visible)]="displayPhoneModal" [modal]="true" [style]="{width: '400px'}">
+@if (ad().user) {
+  <p-dialog
+    header="{{ ad().user.name }}"
+    [(visible)]="displayPhoneModal"
+    [modal]="true"
+    [style]="{ width: '400px' }"
+  >
     <p class="modal-header">{{ formattedPhone() }}</p>
     <p class="modal-list-header">Правила безопасных сделок:</p>
     <ul class="modal-list">
-        <li class="modal-list-item">Храните в тайне почту, данные паспорта и банковской карты</li>
-        <li class="modal-list-item">Игнорируйте ссылки на оплату, которые присылает собеседник</li>
-        <li class="modal-list-item">Никому не говорите коды из смс и пуш-уведомлений</li>
+      <li class="modal-list-item">
+        Храните в тайне почту, данные паспорта и банковской карты
+      </li>
+      <li class="modal-list-item">
+        Игнорируйте ссылки на оплату, которые присылает собеседник
+      </li>
+      <li class="modal-list-item">
+        Никому не говорите коды из смс и пуш-уведомлений
+      </li>
     </ul>
-
-</p-dialog>
+  </p-dialog>
 }

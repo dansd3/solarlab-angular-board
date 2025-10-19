@@ -13,7 +13,13 @@ import { ButtonModule } from 'primeng/button';
 @Component({
   selector: 'app-advert-detail',
   standalone: true,
-  imports: [CommonModule, GalleriaModule, DialogModule, ButtonModule, Breadcrumbs,],
+  imports: [
+    CommonModule,
+    GalleriaModule,
+    DialogModule,
+    ButtonModule,
+    Breadcrumbs,
+  ],
   templateUrl: './advert-detail.html',
   styleUrls: ['./advert-detail.scss'],
 })
@@ -27,7 +33,13 @@ export class AdvertDetail {
     { initialValue: {} as AdDetail },
   );
   displayPhoneModal = signal(false);
-  images = computed(() => this.ad().imagesIds?.map(id => ({ itemImageSrc: `${environment.baseUrl}/Images/${id}`, thumbnailImageSrc: `${environment.baseUrl}/Images/${id}` })) || []);
+  images = computed(
+    () =>
+      this.ad().imagesIds?.map((id) => ({
+        itemImageSrc: `${environment.baseUrl}/Images/${id}`,
+        thumbnailImageSrc: `${environment.baseUrl}/Images/${id}`,
+      })) || [],
+  );
   formattedPhone = computed(() => {
     const phone = this.ad().phone;
     if (phone && phone.length === 11) {
@@ -35,7 +47,10 @@ export class AdvertDetail {
     }
     return phone;
   });
-  mapLink = computed(() => `https://google.com/maps/search/${encodeURIComponent(this.ad().location || '')}`);
+  mapLink = computed(
+    () =>
+      `https://google.com/maps/search/${encodeURIComponent(this.ad().location || '')}`,
+  );
   showPhoneModal() {
     this.displayPhoneModal.set(true);
   }

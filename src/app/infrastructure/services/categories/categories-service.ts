@@ -1,13 +1,12 @@
 import { Injectable, inject } from '@angular/core';
 import { Observable } from 'rxjs';
-import { BreadcrumbsApi } from './breadcrumbs-api';
+import { CategoriesApi } from './categories-api';
 import { Category } from '@/shared/types/category';
-
 @Injectable({
   providedIn: 'root',
 })
-export class BreadcrumbsService {
-  private api = inject(BreadcrumbsApi);
+export class CategoriesBusiness {
+  private api = inject(CategoriesApi);
   getAll(): Observable<Category[]> {
     return this.api.getAll();
   }

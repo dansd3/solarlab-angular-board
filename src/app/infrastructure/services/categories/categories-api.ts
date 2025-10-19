@@ -6,7 +6,7 @@ import { environment } from '@/environments/environment';
 @Injectable({
   providedIn: 'root',
 })
-export class BreadcrumbsApi {
+export class CategoriesApi {
   private http = inject(HttpClient);
   getAll(): Observable<Category[]> {
     return this.http.get<Category[]>(`${environment.baseUrl}/Categories`);

@@ -9,7 +9,9 @@
   <div class="form-field">
     <input pInputText formControlName="login" placeholder="Логин" />
     @if (loginControl?.invalid && loginControl?.touched) {
-      <div class="form-error-message">Логин должен быть от 4 до 64 символов</div>
+      <div class="form-error-message">
+        Логин должен быть от 4 до 64 символов
+      </div>
     }
   </div>
 

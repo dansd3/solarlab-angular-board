@@ -1,4 +1,9 @@
-import { ComponentFixture, TestBed, fakeAsync, tick } from '@angular/core/testing';
+import {
+  ComponentFixture,
+  TestBed,
+  fakeAsync,
+  tick,
+} from '@angular/core/testing';
 import { LoginModal } from './login-modal';
 import { LoginModalService } from './services/login-modal-service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -16,7 +21,9 @@ describe('LoginModal', () => {
   let loginServiceSpy: jasmine.SpyObj<LoginModalService>;
 
   beforeEach(async () => {
-    const loginServiceMock = jasmine.createSpyObj('LoginModalService', ['login']);
+    const loginServiceMock = jasmine.createSpyObj('LoginModalService', [
+      'login',
+    ]);
 
     await TestBed.configureTestingModule({
       imports: [
@@ -29,14 +36,14 @@ describe('LoginModal', () => {
         ButtonModule,
         MessageModule,
       ],
-      providers: [
-        { provide: LoginModalService, useValue: loginServiceMock },
-      ],
+      providers: [{ provide: LoginModalService, useValue: loginServiceMock }],
     }).compileComponents();
 
     fixture = TestBed.createComponent(LoginModal);
     component = fixture.componentInstance;
-    loginServiceSpy = TestBed.inject(LoginModalService) as jasmine.SpyObj<LoginModalService>;
+    loginServiceSpy = TestBed.inject(
+      LoginModalService,
+    ) as jasmine.SpyObj<LoginModalService>;
     fixture.detectChanges();
   });
 
@@ -109,5 +116,4 @@ describe('LoginModal', () => {
     component.onRegister();
     expect(registerSpy).toHaveBeenCalled();
   });
-
 });
