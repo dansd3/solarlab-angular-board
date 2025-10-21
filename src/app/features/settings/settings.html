@@ -1,0 +1,61 @@
+<div class="container">
+    <div class="settings">
+        <h2 class="settings-title">Настройки пользователя</h2>
+        <form class="settings-form" [formGroup]="form" (ngSubmit)="onSubmit()">
+            <div class="settings-form-field">
+                <label class="settings-form-field-name" for="name">Имя</label>
+                <input pInputText class="settings-form-field-input" id="name" formControlName="name" />
+                @if (form.get('name')?.invalid && (form.get('name')?.dirty || form.get('name')?.touched)) {
+                <div class="p-error">
+                    @if (form.get('name')?.errors?.['required']) {
+                    <small class="settings-form-field-error">Имя обязательно для заполнения.</small>
+                    }
+
+                    @if (form.get('name')?.errors?.['minlength'] || form.get('name')?.errors?.['maxlength']) {
+                    <small class="settings-form-field-error">Имя должено быть больше 4 и меньше 64 символов.</small>
+                    }
+                </div>
+                }
+            </div>
+
+            <div class="settings-form-field">
+                <label class="settings-form-field-name" for="password">Новый пароль</label>
+                <p-password placeholder="Введите новый пароль" class="settings-form-field-input" id="password"
+                    formControlName="password" [feedback]="false"></p-password>
+                @if (form.get('password')?.invalid && (form.get('password')?.dirty || form.get('password')?.touched)) {
+                <div class="p-error">
+                    @if (form.get('password')?.errors?.['required']) {
+                    <small class="settings-form-field-error">Пароль обязателен для заполнения.</small>
+                    }
+                    @if (form.get('password')?.errors?.['minlength'] || form.get('password')?.errors?.['maxlength']) {
+                    <small class="settings-form-field-error">Пароль должен быть больше 8 и меньше 64 символов.</small>
+                    }
+                </div>
+                }
+            </div>
+
+            <div class="settings-form-field">
+                <label class="settings-form-field-name" for="confirmPassword">Подтверждение пароля</label>
+                <p-password placeholder="Подтвердите новый пароль" class="settings-form-field-input"
+                    id="confirmPassword" formControlName="confirmPassword" [feedback]="false"></p-password>
+                @if (form.get('confirmPassword')?.invalid && (form.get('confirmPassword')?.dirty ||
+                form.get('confirmPassword')?.touched)) {
+                <div class="p-error">
+                    @if (form.get('confirmPassword')?.errors?.['required']) {
+                    <small class="settings-form-field-error">Подтверждение пароля обязательно.</small>
+                    }
+                </div>
+                }
+                @if (form.errors?.['passwordMismatch'] && (form.get('confirmPassword')?.dirty ||
+                form.get('confirmPassword')?.touched)) {
+                <div class="p-error">
+                    <small class="settings-form-field-error">Пароли не совпадают.</small>
+                </div>
+                }
+            </div>
+
+            <p-button class="settings-form-submit" severity="info" type="submit" label="Сохранить изменения"
+                [disabled]="form.invalid"></p-button>
+        </form>
+    </div>
+</div>

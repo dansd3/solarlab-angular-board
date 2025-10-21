@@ -15,14 +15,6 @@ export const routes: Routes = [
       ),
   },
   {
-    path: 'settings',
-    loadComponent: () =>
-      import('@/features/personal-account/personal-account').then(
-        (m) => m.PersonalAccount,
-      ),
-    canActivate: [authGuard],
-  },
-  {
     path: 'my-adverts',
     loadComponent: () =>
       import('@/features/my-adverts/my-adverts').then(
@@ -39,6 +31,12 @@ export const routes: Routes = [
     path: 'new-advert',
     loadComponent: () =>
       import('@/features/new-advert/new-advert').then((m) => m.NewAdvert),
+    canActivate: [authGuard],
+  },
+    {
+    path: 'settings',
+    loadComponent: () =>
+      import('@/features/settings/settings').then((m) => m.Settings),
     canActivate: [authGuard],
   },
 ];
