@@ -1,0 +1,161 @@
+<div class="container">
+  <form class="new-form" [formGroup]="form" (ngSubmit)="onSubmit()">
+    <div class="new-form-field new-form-category">
+      <label class="new-form-label" for="category"
+        >Категория <span class="new-form-label-required">*</span></label
+      >
+      <p-treeselect
+        placeholder="Нажмите, чтобы выбрать"
+        id="category"
+        formControlName="categoryId"
+        [options]="categories()"
+      ></p-treeselect>
+      @if (f["categoryId"].touched && f["categoryId"].invalid) {
+        <small class="new-form-error">Выберите категорию</small>
+      }
+    </div>
+
+    <div class="new-form-field new-form-name">
+      <label class="new-form-label" for="name"
+        >Название объявления
+        <span class="new-form-label-required">*</span></label
+      >
+      <input
+        placeholder="Что хотите продать?"
+        pInputText
+        id="name"
+        formControlName="name"
+      />
+      @if (f["name"].touched && f["name"].invalid) {
+        <small class="new-form-error">Название обязательно</small>
+      }
+    </div>
+
+    <div class="new-form-field new-form-description">
+      <label class="new-form-label" for="description">Описание</label>
+      <textarea
+        class="new-form-field new-form-description"
+        placeholder="Расскажите подробнее о товаре или услуге"
+        pInputTextarea
+        id="description"
+        formControlName="description"
+        rows="5"
+      ></textarea>
+    </div>
+
+    <div class="new-form-field new-form-location">
+      <label class="new-form-label" for="location"
+        >Адрес <span class="new-form-label-required">*</span></label
+      >
+      <input
+        placeholder="Начните вводить адрес"
+        pInputText
+        id="location"
+        formControlName="location"
+      />
+      @if (f["location"].touched && f["location"].invalid) {
+        <small class="new-form-error">Укажите адрес</small>
+      }
+    </div>
+
+    <div class="new-form-field new-form-phone">
+      <label class="new-form-label" for="phone"
+        >Телефон <span class="new-form-label-required">*</span></label
+      >
+      <input
+        placeholder="Введите телефон"
+        pInputText
+        id="phone"
+        formControlName="phone"
+      />
+      @if (f["phone"].touched && f["phone"].invalid) {
+        <small class="new-form-error">Укажите адрес</small>
+      }
+    </div>
+
+    <div class="new-form-field new-form-images">
+      <label for="upload" class="new-form-label">Изображения</label>
+
+      <p-fileUpload
+        #fileUploader
+        mode="advanced"
+        name="Images[]"
+        [multiple]="true"
+        accept="image/png,image/jpeg,image/heic"
+        maxFileSize="10000000"
+        (onSelect)="onFileSelect($event)"
+        [showUploadButton]="false"
+        [showCancelButton]="false"
+        chooseLabel="Выбрать картинки"
+        [files]="selectedFiles"
+        id="upload"
+      >
+        <ng-template pTemplate="empty">
+          <div class="new-form-drop-zone">
+            <i class="pi pi-cloud-upload new-form-drop-icon"></i>
+            <p class="new-form-drop-text">
+              Перетащите файлы сюда, чтобы загрузить
+            </p>
+          </div>
+        </ng-template>
+
+        <ng-template let-file pTemplate="file">
+          <div class="new-form-file-item">
+            <div class="new-form-file-info">
+              <img
+                [src]="file | objectUrl"
+                class="new-form-file-preview"
+                [alt]="file.name"
+              />
+              <div class="new-form-file-details">
+                <div class="new-form-file-name">{{ file.name }}</div>
+                <div class="new-form-file-size">
+                  {{ file.size / 1024 | number: "1.0-0" }} KB
+                </div>
+              </div>
+            </div>
+            <p-button
+              severity="info"
+              type="button"
+              icon="pi pi-times"
+              class="p-button-rounded p-button-danger p-button-text"
+              (click)="removeFile(file, fileUploader)"
+            ></p-button>
+          </div>
+        </ng-template>
+      </p-fileUpload>
+
+      @if (f["images"].touched && f["images"].invalid) {
+        <small class="new-form-error">Добавьте от 1 до 10 изображений</small>
+      }
+    </div>
+
+    <div class="new-form-field new-form-cost">
+      <label class="new-form-label" for="cost"
+        >Цена <span class="new-form-label-required">*</span></label
+      >
+      <p-inputNumber
+        id="cost"
+        formControlName="cost"
+        mode="currency"
+        currency="RUB"
+      ></p-inputNumber>
+      @if (f["cost"].touched && f["cost"].invalid) {
+        <small class="new-form-error">Укажите корректную цену</small>
+      }
+    </div>
+
+    <div class="new-form-submit">
+      <p-button
+        severity="info"
+        type="submit"
+        label="Разместить объявление"
+      ></p-button>
+    </div>
+
+    <p class="new-form-terms">
+      Нажимая кнопку «Разместить объявление» <br />
+      Вы соглашаетесь с правилами площадки
+    </p>
+  </form>
+</div>

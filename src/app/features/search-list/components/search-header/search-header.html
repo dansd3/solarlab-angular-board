@@ -1,0 +1,5 @@
+@if (query()) {
+  <h2 class="search-title">Обьявления по запросу «{{ query() }}»</h2>
+} @else {
+  <h2 class="search-title">Обьявления по категории «{{ categoryName }}»</h2>
+}

@@ -1,0 +1,24 @@
+@switch (imageStatus()) {
+  @case ("success") {
+    @if (imageId()) {
+      <img
+        [src]="'http://dzitskiy.ru:5000/' + imageId()"
+        alt="Ad image"
+        class="ad-image"
+        (error)="onImageError($event)"
+      />
+    } @else {
+      <img
+        src="/assets/no-image.jpg"
+        alt="No image available"
+        class="ad-image"
+      />
+    }
+  }
+  @case ("error") {
+    <div class="image-error">{{ errorMessage() }}</div>
+  }
+  @case ("no-image") {
+    <img src="/assets/no-image.jpg" alt="No image available" class="ad-image" />
+  }
+}

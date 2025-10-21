@@ -1,1 +1,162 @@
+@import "primeicons/primeicons.css";
+
 /* You can add global styles to this file, and also import other style files */
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+:root {
+  --blue: #3b82f6;
+  --dark-blue: #1a63d9;
+  --dark-bg: #1e293b;
+  --heading-color: #1e293b;
+  --small-text-color: #64748b;
+  --border-color: #e2e8f0;
+  --p-button-info-background: #3b82f6 !important;
+  --p-button-info-hover-background: #1a63d9 !important;
+  --p-button-outlined-info-border-color: #3b82f6 !important;
+  --p-button-outlined-info-color: #3b82f6 !important;
+  --p-checkbox-checked-hover-background: #1a63d9 !important;
+  --p-checkbox-checked-background: #3b82f6 !important;
+  --p-inputtext-focus-border-color: #3b82f6 !important;
+  --p-select-option-selected-focus-background: #e8effa !important;
+  --p-select-option-selected-focus-color: #1e293b !important;
+  --p-select-option-selected-background: transparent !important;
+  --p-select-option-selected-color: #1e293b !important;
+}
+.container {
+  max-width: 1296px;
+  margin: 0 auto;
+  padding: 0 15px;
+  box-sizing: content-box;
+}
+
+html {
+  font-size: 14px;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  background-color: #ffffff;
+}

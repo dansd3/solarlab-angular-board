@@ -1,0 +1,39 @@
+.header-top-content-login {
+  display: flex;
+  margin-right: 24px;
+  text-decoration: none;
+  gap: 8px;
+  --p-button-text-secondary-color: white !important;
+  --p-button-text-secondary-hover-background: none;
+  --p-button-text-secondary-active-background: none;
+  --p-button-padding-y: 8px;
+  --p-button-padding-x: 0;
+}
+
+.header-top-content-login:hover {
+  --p-button-text-secondary-color: var(--blue) !important;
+}
+
+.header-top-content-login-wrapper {
+  text-align: right !important;
+}
+::ng-deep .menu-item-logout {
+  --p-menu-item-color: #f44336;
+}
+::ng-deep .menu-align {
+  display: block;
+  text-align: right;
+  margin: auto;
+  width: 100%;
+}
+
+::ng-deep .p-menu-item-link {
+  justify-content: flex-end;
+}
+
+::ng-deep .modal-form {
+  width: 400px;
+  --p-dialog-header-padding: 1.7rem;
+  --p-dialog-content-padding: 0 1.7rem 1.7rem;
+  --p-dialog-title-font-size: 1.7rem;
+}

@@ -1,0 +1,28 @@
+.recommendations {
+  margin-bottom: 80px;
+}
+
+.recommendations-title {
+  margin: 32px 0 24px;
+  color: var(--heading-color);
+  font-size: 24px;
+  line-height: 1.3;
+  font-weight: 600;
+}
+
+.recommendations-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  gap: 32px 24px;
+}
+
+.listing {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  max-width: 305px;
+  min-width: 250px;
+  border-radius: 3px;
+  overflow: hidden;
+}

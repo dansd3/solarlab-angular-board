@@ -1,0 +1,25 @@
+.ad-image {
+  overflow: hidden;
+}
+
+.ad-image-img {
+  width: 100%;
+  aspect-ratio: 1.5;
+  display: block;
+  transition: transform 0.3s ease;
+  object-fit: cover;
+}
+
+.ad-image-img:hover {
+  transform: scale(1.2);
+}
+
+.ad-image-error {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  color: red;
+  width: 100%;
+  height: 200px;
+}

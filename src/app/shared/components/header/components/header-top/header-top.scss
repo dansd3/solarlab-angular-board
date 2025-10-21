@@ -1,0 +1,23 @@
+.header-top {
+  background-color: var(--dark-bg);
+}
+
+.header-top-content {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 8px 0;
+}
+
+.header-top-content-new {
+  display: flex;
+  align-items: center;
+  background-color: var(--blue);
+  border: none;
+  border-radius: 3px;
+}
+
+.header-top-content-new:hover {
+  background-color: var(--dark-blue);
+  cursor: pointer;
+}

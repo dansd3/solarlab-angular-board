@@ -1,0 +1,33 @@
+.listing-link {
+  text-decoration: none;
+}
+
+.listing-link-info {
+  margin-top: 8px;
+}
+
+.listing-link-info-title {
+  color: var(--blue);
+  font-size: 18px;
+  line-height: 1.33;
+  font-weight: 600;
+}
+
+.listing-link-info-title:hover {
+  color: var(--dark-blue);
+  text-decoration: underline;
+}
+
+.listing-link-info-price {
+  color: var(--heading-color);
+  font-size: 18px;
+  line-height: 1.33;
+  font-weight: 600;
+}
+
+.listing-link-info-text {
+  color: var(--small-text-color);
+  font-size: 14px;
+  line-height: 1.4;
+  font-weight: 400;
+}

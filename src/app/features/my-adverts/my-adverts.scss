@@ -1,0 +1,52 @@
+.my-adverts {
+
+
+
+    &-title {
+        font-size: 24px;
+        font-weight: 600;
+        margin: 32px 0 24px;
+
+    }
+
+    &-list {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        gap: 32px 24px;
+
+        &-new {
+            border: 4px dashed var(--blue);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 335px;
+            width: 305px;
+            cursor: pointer;
+            border-radius: 8px;
+
+            &-text {
+                margin-top: 24px;
+                color: var(--blue);
+                font-size: 18px;
+                font-weight: 500;
+            }
+
+            &-icon {}
+        }
+    }
+
+
+
+}
+
+.listing {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    max-width: 305px;
+    min-width: 250px;
+    border-radius: 3px;
+    overflow: hidden;
+}

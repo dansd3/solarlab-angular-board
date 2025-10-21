@@ -1,0 +1,10 @@
+<section class="recommendations">
+  <div class="container">
+    <h2 class="recommendations-title">Рекомендации для вас</h2>
+    <div class="recommendations-list">
+      @for (ad of ads(); track ad.id) {
+        <app-ad-card [ad]="ad" class="listing"></app-ad-card>
+      }
+    </div>
+  </div>
+</section>

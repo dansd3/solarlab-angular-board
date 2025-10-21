@@ -1,0 +1,69 @@
+<form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="form">
+  <div class="form-field">
+    <input pInputText formControlName="login" placeholder="Логин" />
+    @if (loginForm.get("login")?.invalid && loginForm.get("login")?.touched) {
+      <div class="form-error-message">
+        Логин должен быть от 4 до 64 символов
+      </div>
+    }
+  </div>
+
+  <div class="form-field">
+    <p-password
+      formControlName="password"
+      [feedback]="false"
+      placeholder="Пароль"
+    ></p-password>
+    @if (
+      loginForm.get("password")?.invalid && loginForm.get("password")?.touched
+    ) {
+      <div class="form-error-message">Пароль должен быть больше 8 символов</div>
+    }
+  </div>
+
+  @switch (serverError) {
+    @case (null) {}
+    @case ("Invalid login or password") {
+      <div class="form-error-message form-error-message-server">
+        Неправильный логин или пароль
+      </div>
+    }
+    @default {
+      <div class="form-error-message form-error-message-server">
+        Ошибка сервера
+      </div>
+    }
+  }
+
+  <div class="form-options">
+    <div>
+      <p class="form-checkbox-label">
+        <p-checkbox
+          formControlName="rememberMe"
+          binary="true"
+          inputId="rememberMe"
+        ></p-checkbox>
+        Запомнить меня
+      </p>
+    </div>
+    <a
+      class="form-register-link"
+      role="button"
+      tabindex="0"
+      (click)="onRegister()"
+      (keydown.enter)="onRegister()"
+      (keydown.space)="onRegister()"
+      >Регистрация
+    </a>
+  </div>
+
+  <div class="form-submit-wrapper">
+    <p-button
+      type="submit"
+      label="Войти"
+      severity="info"
+      [disabled]="loginForm.invalid"
+      class="form-submit-button"
+    />
+  </div>
+</form>

@@ -1,0 +1,25 @@
+.categories-list {
+  &-header {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--heading-color);
+    margin: 9px 0 12px;
+  }
+
+  &-tree {
+    padding: 0;
+    --p-tree-node-selected-background: transparent;
+  }
+}
+
+::ng-deep .p-tree-node-label {
+  color: var(--blue);
+}
+
+::ng-deep .p-tree-node-toggle-button {
+  color: var(--blue);
+}
+
+::ng-deep .p-tree-node-content {
+  padding-left: 0 !important;
+}

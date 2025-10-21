@@ -1,0 +1,110 @@
+.advert-detail {
+  &-container {
+    display: flex;
+    gap: 24px;
+    margin-top: 32px;
+  }
+
+  &-left {
+    width: 65%;
+
+    &-header {
+      font-weight: 600;
+      font-size: 30px;
+      margin-bottom: 16px;
+    }
+
+    &-gallery {
+      border-radius: 10px;
+    }
+  }
+
+  &-right {
+    flex: 1;
+    margin-top: 8px;
+
+    &-price {
+      font-size: 30px;
+      font-weight: 600;
+      margin-bottom: 16px;
+    }
+
+    &-button {
+      --p-button-padding-y: 20px;
+      --p-button-padding-x: 60px;
+
+      &::ng-deep .p-button {
+        font-size: 20px;
+        gap: 12px;
+      }
+
+      &::ng-deep .p-button-icon {
+        transform: scale(1.5);
+      }
+    }
+
+    &-location {
+      margin-top: 40px;
+      gap: 4px;
+
+      &-header {
+        font-weight: 600;
+        font-size: 24px;
+      }
+
+      &-text {
+        margin: 6px 0;
+        font-size: 16px;
+        font-weight: 400;
+      }
+
+      &-link {
+        font-size: 16px;
+        font-weight: 400;
+        color: var(--blue);
+        text-decoration: none;
+      }
+    }
+
+    &-description {
+      margin-top: 32px;
+
+      &-header {
+        font-size: 24px;
+        font-weight: 600;
+      }
+
+      &-text {
+        margin-top: 8px;
+        font-size: 16px;
+        font-weight: 400;
+      }
+    }
+
+    &-phone {
+      font-size: 18px;
+      font-weight: bold;
+    }
+  }
+}
+
+.modal {
+  &-header {
+    color: var(--blue);
+    font-size: 30px;
+    margin-bottom: 32px;
+  }
+
+  &-list {
+    gap: 4px;
+    font-size: 18px;
+    list-style: disc;
+    &-header {
+      font-size: 18px;
+    }
+
+    &-item {
+      margin-left: 20px;
+    }
+  }
+}

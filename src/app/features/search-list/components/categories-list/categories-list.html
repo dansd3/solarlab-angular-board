@@ -1,0 +1,8 @@
+<h3 class="categories-list-header">Все категории</h3>
+<p-tree
+  [value]="treeNodes()"
+  selectionMode="single"
+  (onNodeSelect)="onNodeSelect($event)"
+  [style]="{ border: 'none' }"
+  class="categories-list-tree"
+></p-tree>
